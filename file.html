@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciencia Inclusiva</title>
+    <style>
+        /* Estilos CSS incluídos directamente en el HTML para uso en App Inventor */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .lista-discriminacion {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .informacion {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            background-color: #f1f9ff;
+        }
+    </style>
+    <script>
+        function mostrarLista() {
+            var lista = document.getElementById("lista-discriminacion");
+            if (lista.style.display === "none") {
+                lista.style.display = "block"; 
+            } else {
+                lista.style.display = "none"; 
+            }
+        }
+
+        function mostrarInformacion(tipo) {
+            var infoDivs = document.querySelectorAll('.informacion');
+            infoDivs.forEach(function(div) {
+                div.style.display = 'none';
+            });
+            var info = document.getElementById(tipo);
+            if (info) {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Consciencia Inclusiva</h1>
+        <nav>
+            <ul>
+                <li><a href="#informacion" onclick="mostrarLista(); return false;">Información</a></li>
+                <li><a href="#cuestionarios">Cuestionarios</a></li>
+                <li><a href="#consejos">Consejos Prácticos</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="informacion">
+            <h2>Información sobre Discriminación</h2>
+            <button onclick="mostrarLista()">Tipos de Discriminación</button>
+            <div id="lista-discriminacion" class="lista-discriminacion">
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('social-economica')">Discriminación social y económica</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('genero')">Discriminación de género</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('racial')">Discriminación racial</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('origen-nacional')">Discriminación por origen nacional</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('religiosa')">Discriminación religiosa</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('politica')">Discriminación política e ideológica</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('orientacion-sexual')">Discriminación por orientación sexual</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('etaria')">Discriminación etaria</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('discapacidad')">Discriminación por discapacidad</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('linguistica')">Discriminación lingüística</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('embarazo')">Discriminación por embarazo</a></li>
+                    <li><a href="javascript:void(0);" onclick="mostrarInformacion('castas')">Discriminación por castas sociales</a></li>
+                </ul>
+            </div>
+
+            <!-- Información detallada sobre cada tipo de discriminación -->
+            <div id="social-economica" class="informacion">
+                <h3>Discriminación Social y Económica</h3>
+                <p>La discriminación social y económica se refiere a las desigualdades...</p>
+            </div>
+            <!-- Agrega aquí el resto de divs de información de manera similar -->
+        </section>
+
+        <section id="cuestionarios">
+            <h2>Cuestionarios y Trivias</h2>
+            <p>Evalúa tu conocimiento sobre la discriminación con nuestros cuestionarios interactivos.</p>
+            <button onclick="alert('Pronto disponibles!')">Comenzar Cuestionario</button>
+        </section>
+
+        <section id="consejos">
+            <h2>Consejos Prácticos</h2>
+            <p>¿Cómo actuar frente a la discriminación?</p>
+            <ul>
+                <li>Escucha y apoya a la persona afectada.</li>
+                <li>Informa a un adulto o autoridad si es necesario.</li>
+                <li>Habla sobre el tema y crea conciencia.</li>
+            </ul>
+        </section>
+
+        <section id="comunidad">
+            <h2>Comunidad</h2>
+            <p>Únete a nuestro foro para compartir tus experiencias y aprender de los demás.</p>
+            <button onclick="alert('Foro en desarrollo')">Acceder al Foro</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Consciencia Inclusiva. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
+
